@@ -1,6 +1,6 @@
 # IADB_Project_Template
 Datos de los autores:
-Zaragoza, Sebastián 13005 sebaema2050@gmail.com
+Zaragoza, Sebastián 13005 sebaema2050@gmail.com /n
 Lopez, Manuel 13065 manuelignaciolopez222@gmail.com
 Bottasso, Anabella 13053 natali.anabella@gmail.com
 Villasante, Ernesto 13145 ernestovillasante@gmail.com
