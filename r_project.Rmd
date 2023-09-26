@@ -1,0 +1,58 @@
+```
+title: "Planificacion Proyecto Final"
+author: "Manuel Lopez"
+date: "2023-08-18"
+output: html_document
+```
+
+```{r setup, include=FALSE} knitr::opts_chunk$set(echo = TRUE)```
+## Antes
+```Descargar la biblioteca plan```
+
+## Including Plots
+
+g <- new("gantt")
+g <- ganttAddTask(g, "Módulo TyHM II") # no times, so a heading
+g <- ganttAddTask(g, "Tesis en Latex", "2023-09-03", "2023-12-05", done=60)
+g <- ganttAddTask(g, "Modulo SCRUM", "2023-09-03", "2023-12-05", done=0)
+
+
+g <- ganttAddTask(g, "Proyecto Final de Estudios") # no times, so a heading
+g <- ganttAddTask(g, "Busqueda de información", "2023-8-01", "2023-09-01", done=40)
+g <- ganttAddTask(g, "Analisis de Mercado", "2023-08-03", "2023-12-01")
+g <- ganttAddTask(g, "Identificacion de parametros y limitaciones", "2023-09-03", "2023-10-01", done=30)
+g <- ganttAddTask(g, "Analisis de interesados", "2023-09-01", "2023-10-01")
+g <- ganttAddTask(g, "Detección y armado de procesos", "2023-10-01", "2023-12-01")
+g <- ganttAddTask(g, "Armado Layout", "2023-09-01", "2023-12-01")
+
+g <- ganttAddTask(g, "Administracion de Proyectos") # no times, so a heading
+g <- ganttAddTask(g, "Armado de acta de inicio de proyecto", "2023-08-03", "2023-09-01", done=60)
+
+
+g <- ganttAddTask(g, "Mesas de Fin de año y de Febrero") # no times, so a heading
+g <- ganttAddTask(g, "Estudio", "2023-12-01", "2024-03-01", done=0)
+g <- ganttAddTask(g, "Reunion de avance 1 vez x semana", "2023-12-01", "2024-03-01", done=0)
+
+g <- ganttAddTask(g, "Etapa final") # no times, so a heading
+g <- ganttAddTask(g, "Analisis de anavces", "2024-03-01", "2024-03-15", done=0)
+g <- ganttAddTask(g, "planificacion de etapas faltantes", "2024-03-15", "2024-04-01", done=0)
+g <- ganttAddTask(g, "Ejecucion", "2024-04-01", "2024-05-01")
+g <- ganttAddTask(g, "Redaccion final", "2024-05-01", "2024-05-10")
+g <- ganttAddTask(g, "Chequeo final", "2024-05-10", "2024-05-15")
+g <- ganttAddTask(g, "rendir", "2024-05-17","2024-05-17")
+
+font <- ifelse(is.na(g[["start"]]), 2, 1)
+plot(g, ylabel=list(font=font),
+     event.time="2024-01-01", event.label="Report Date")
+par(lend="square") # default is round
+legend(pch=22, pt.cex=2, pt.bg=gray(c(0.3, 0.9)),
+       border="black", xpd=NA,
+       legend=c("Completado", "Por realizar"), title="Diploma Ingeniero", bg="white",cex=.7, x=0.82, y=1)
+
+
+
+#Burndown
+library("plan")
+data(burndown)
+plot(burndown)
+
