@@ -1,5 +1,4 @@
-# IADB_Project_Template
-Datos de los autores:
+# Datos de los autores
 
 Zaragoza, Sebastián 13005 sebaema2050@gmail.com 
 
